@@ -34,19 +34,18 @@ class LinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
-        this.length = this.size();
-
+        this.length = 0;
     }
 
     // TODO: Implement the addToTail method here
     addToTail(val) {
         let node = new Node(val)
-        this.length += 1;
         if(this.tail){
             this.tail.next = node;
         }else{
             this.head = node;
         }
+        this.length += 1;
         this.tail = node
         return this
     }
@@ -78,7 +77,6 @@ class LinkedList {
     // TODO: Implement the addToHead method here
     addToHead(val) {
         let node = new Node(val)
-        this.length += 1;
         if(this.head){
             node.next = this.head;
             this.head = node
@@ -86,6 +84,7 @@ class LinkedList {
             this.tail = node
         }
         this.head = node
+        this.length += 1;
         return this
     }
 
@@ -108,14 +107,11 @@ class LinkedList {
     // TODO: Implement the contains method here
     contains(target) {
         let currentNode = this.head;
-        let nextNode = this.head.next
-        while (currentNode.next){
+        while (currentNode){
             if(currentNode.value === target){
                 return true
-            }else{
-                currentNode = nextNode;
-                nextNode = nextNode.next
             }
+            currentNode = currentNode.next;
         }
         return false
     }
@@ -156,7 +152,7 @@ class LinkedList {
         let newNode = new Node(val)
         newNode.next = currentNode
         previousNode.next = newNode;
-        this.size();
+        this.length += 1;
         return true
     }
 
@@ -171,27 +167,13 @@ class LinkedList {
             index -= 1
         }
         previousNode.next = currentNode.next;
-        this.size();
+        this.length -= 1;
         return currentNode
     }
 
     // TODO: Implement the size method here
     size() {
-        if(!this.head){
-            return 0
-        }else if(this.tail.next === null){
-            return 1
-        }else{
-            let count = 1;
-            let currentNode = this.head;
-            let nextNode = this.head.next
-            while (currentNode.next){
-                count += 1
-                currentNode = nextNode;
-                nextNode = nextNode.next
-            }
-            return count
-        }
+        return this.length
     }
 }
 
