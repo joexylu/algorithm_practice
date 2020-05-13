@@ -61,14 +61,29 @@
 // -----------
 function hasCycle(linkedList) {
   // TODO: Implement the hasCycle function!
-  var nodes = {};
-  let currentNode = linkedList.head;
-  while (currentNode){
-    if(nodes[currentNode.value]){
-      return true
-    }
-    nodes[currentNode.value] = true
-    currentNode = currentNode.next;
+
+  // naive way:
+  // var nodes = {};
+  // let currentNode = linkedList.head;
+  // while (currentNode){
+  //   if(nodes[currentNode.value]){
+  //     return true
+  //   }
+  //   nodes[currentNode.value] = true
+  //   currentNode = currentNode.next;
+  // }
+  // return false
+
+  // Floyd’s Cycle-Finding Algorithm:
+
+  let fast = linkedList.head;
+  let slow =linkedList.head;
+
+  while(fast && fast.next){
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if(fast === slow) return true;
   }
   return false
 }
