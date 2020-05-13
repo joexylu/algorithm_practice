@@ -45,14 +45,28 @@ function linkedListIntersection(list1, list2) {
   let node2 =list2.head;
   let nodes = {}
   while(node1 && node2){
+    
+    if (nodes[node1.value]) return node1;
+    if (nodes[node2.value]) return node2;
+    
+    
+    nodes[node1.value] = true;
+    nodes[node2.value] = true;
+    
+    
+    // nodes[node1] += 1
+    // nodes[node2] += 1
+    if(node1 === node2) return node1;
+
     node1 = node1.next;
     node2 = node2.next;
-    if(nodes[node1.value]) return node1.value;
-    if(nodes[node2.value]) return node2.value;
-    if(node1 === node2) return node1;
-    nodes[node1.value] = true;
-    nodes[node2.value] = true
   }
+  // for (var key in nodes){
+  //   if (nodes[key] > 1){
+  //     return key
+  //   }
+  // }
+
   return null
 }
 
