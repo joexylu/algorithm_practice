@@ -58,19 +58,24 @@
 // TODO: Implement the LRUCacheItem class here
 class LRUCacheItem {
   constructor(val = null, key = null) {
-
+    this.val = val;
+    this.key = key;
+    this.node = null;
   }
 }
 
 // TODO: Implement the LRUCacheItem class here
 class LRUCache {
   constructor(limit) {
-
+    this.ordering = new List()
+    this.size = 0;
+    this.limit = limit;
+    this.cacheMap = {}
   }
 
   // TODO: Implement the size method here
   size() {
-
+    return this.size
   }
 
   // TODO: Implement the get method here
