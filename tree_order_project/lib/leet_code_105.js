@@ -26,3 +26,5 @@ function buildTree(preorder, inorder) {
     root.right = right;
     return root;
 }
+
+console.log()
