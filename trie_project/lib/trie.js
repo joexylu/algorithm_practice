@@ -24,7 +24,21 @@ class Trie {
         }
     }
 
-    insertIter(word, root=this.root){
+    insertIter(word){
+
+        let node = this.root
+
+        for(let i = 0; i < word.length; i++){
+            let letter = word[i]
+
+            if(!(letter in node.children)){
+                node.children[letter] = new Node()
+            }
+
+            node = node.children[letter]
+        }
+
+        node.isTerminal = true
 
     }
 
@@ -46,8 +60,51 @@ class Trie {
         }
     }
 
-    searchIter(word, root=this.root){
+    searchIter(word){
+        let node = this.root
 
+        for(let i = 0; i < word.length; i++){
+            let letter = word[i]
+
+            if(!(letter in node.children)){
+                return false
+            }
+            node = node.children[letter]
+        }
+        return node.isTerminal
+    }
+
+    wordsWithPrefix(prefix, root=this.root){
+
+        if (prefix.length === 0){
+            let allWords = []
+    
+            if (root.isTerminal) allWords.push("")
+    
+            for(let letter in root.children){
+                let child = root.children[letter]
+                let suffixes = this.wordsWithPrefix(prefix, child)
+    
+                let words = suffixes.map(ele => letter + ele)
+    
+                allWords.push(...words)
+            }
+            return allWords
+        }else{
+            let firstLetter = prefix[0]
+
+            let child = root.children[firstLetter]
+
+            if(child === undefined){
+                return []
+            }else{
+                let suffixes = this.wordsWithPrefix(prefix.slice(1), root.children[firstLetter])
+    
+                let words = suffixes.map(ele => firstLetter + ele)
+    
+                return words
+            }
+        }
     }
 }
 
