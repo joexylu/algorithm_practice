@@ -8,7 +8,21 @@ function twoNumberSum(array, target){
             }
         }
     }
-	return []
+    return []
+    
+
+
+    //method 2
+    // let tracker = {}
+	//  let result = []
+	//  array.forEach(el => {
+	// 	 if (!tracker[target - el]&& tracker[target - el]!== 0){
+	// 		 tracker[el] = target - el
+	// 	 } else {
+	// 		 result = [el, target - el]
+	// 	 }
+	//  })
+	// return result
 }
 
 console.log(twoNumberSum(arr, 10))
