@@ -7,8 +7,6 @@ function longestPeak(array) {
 
     let max = 0;
 
-    let result = []
-
     for(let i = 1; i< array.length - 1; i++){
         if(array[i] > array[i-1] && array[i]> array[i+1]){
 
@@ -22,17 +20,15 @@ function longestPeak(array) {
                     count += 1;
                     left = left - 1
                 }else{
-                    count += 1
                     break
                 }
             }
 
             while(right + 1 < array.length){
                 if(array[right] > array[right + 1]){
-                    right = right - 1
                     count += 1;
+                    right = right + 1
                 }else{
-                    count += 1
                     break
                 }
             }
