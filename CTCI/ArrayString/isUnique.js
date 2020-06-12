@@ -19,6 +19,7 @@ function isUnique(str){
 
 }
 
+//time complexity is O(n) and space O(1)
 
 // let string = "aaaabbbbc"
 // console.log(isUnique(string))
