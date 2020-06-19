@@ -81,4 +81,32 @@ class LinkedList{
             return removed
         }
     }
+
+    hasNode(target){
+        let current = this.head;
+
+        while(current){
+            if(current.value === target){
+                return true
+            }
+            current = current.next
+        }
+        return false
+    }
+
+    get(index){
+        if (index >= this.length) return null;
+
+        let current = this.head;
+
+        while(index > 0){
+            current = current.next;
+            index --
+        }
+        return current
+    }
+
+    set(index, value){
+        
+    }
 }
