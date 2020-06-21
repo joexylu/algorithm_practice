@@ -106,7 +106,47 @@ class LinkedList{
         return current
     }
 
-    set(index, value){
+    set(idx, value){
+        
+    }
+
+    insert(idx, value){
+
+    }
+
+    remove(idx){
+
+    }
+
+    removeDup(){
+
+    }
+
+    KthToLast(k){
+
+    }
+
+    removeMidNode(){
+
+    }
+
+    partition(){
+
+    }
+
+    SumList(){
+
+    }
+
+    palindrome(){
+
+    }
+
+    intersection(list1, list2){
+
+    }
+
+    loopDetection(list){
         
     }
 }
