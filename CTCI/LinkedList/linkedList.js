@@ -106,12 +106,36 @@ class LinkedList{
         return current
     }
 
-    set(idx, value){
-        
+    set(index, value){
+        if(index >= this.length) return false;
+
+        let currentNode = this.head;
+
+        while(index > 0){
+            currentNode = currentNode.next
+            index --
+        }
+        currentNode.value = value
+        return true
     }
 
-    insert(idx, value){
+    insert(index, value){
+        if(index >= this.length) return false;
 
+        let currentNode = this.head;
+        let previousNode = this.head
+
+        while(index > 0){
+            previousNode = currentNode
+            currentNode = currentNode.next
+            index --
+        }
+
+        let newNode = new Node(value)
+
+        
+        currentNode.value = value
+        return true
     }
 
     remove(idx){
