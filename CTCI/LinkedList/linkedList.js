@@ -133,20 +133,78 @@ class LinkedList{
 
         let newNode = new Node(value)
 
-        
-        currentNode.value = value
+        newNode.next = currentNode
+        previousNode.next = newNode
+        this.length += 1
         return true
     }
 
-    remove(idx){
+    remove(index){
+        if(index >= this.length) return false;
 
+        let currentNode = this.head;
+        let previousNode = this.head
+
+        while(index > 0){
+            previousNode = currentNode
+            currentNode = currentNode.next
+            index --
+        }
+
+        previousNode.next = currentNode.next
+        this.lenght -= 1
+        return currentNode
     }
 
     removeDup(){
+        let heap = {}
+        let current = this.head;
+        let previousNode = this.head
 
+        while(current){
+            if(current.value in heap){
+                heap[current.value] += 1
+                previousNode.next = current.next
+            }else{
+                heap[current.value] = 1
+                previousNode = currentNode
+            }
+            current = current.next
+        }
+
+        return this
+        
     }
 
-    KthToLast(k){
+    KthToLast(head,k){
+
+        //recursion way
+
+        // if(!!node) return 0
+
+        // let index = this.KthToLast(node.next,k) + 1
+
+        // if (index === k){
+        //     return node.value
+        // }
+
+        if(!head || k < 1){
+            return false
+        }
+        let i = 0
+        let current = head
+        let nBehind = head
+
+        while(current){
+            i += 1
+            current = current.next
+        }
+
+        for(let j = 0; j < i-k; j++){
+            nBehind = nBehind.next;
+            j++
+        }
+        return nBehind
 
     }
 
@@ -154,8 +212,27 @@ class LinkedList{
 
     }
 
-    partition(){
+    partition(head, x){
+        if(!head) return false;
 
+        let previousNode = head
+        let currentNode = previousNode.next;
+        let replaceNext = head;
+
+        while(currentNode){
+            if(currentNode.value < x){
+                previousNode.next = currentNode.next
+
+                currentNode.next = replaceNext.next
+                replaceNext.next = currentNode
+                replaceNext = replaceNext.next
+            }else{
+                previousNode = currentNode
+                currentNode = currentNode.next
+            }
+        }
+
+        return head
     }
 
     SumList(){
