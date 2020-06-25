@@ -232,7 +232,7 @@ class LinkedList{
             }
         }
 
-        return head
+
     }
 
     SumList(){
