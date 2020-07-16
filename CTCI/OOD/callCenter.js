@@ -31,5 +31,17 @@ class CallHandler{
 
 
 class Call{
-    constructor(caller)
+    constructor(caller, rank){
+        this.caller = caller
+        this.rank = rank
+
+        this.handler = new Employee()
+    }
+
+    call(caller){
+        let rank = this.rank
+        let caller = caller
+    }
+
+    
 }
