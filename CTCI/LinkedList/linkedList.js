@@ -235,12 +235,12 @@ class LinkedList{
 
     }
 
-    SumList(){
+    SumList(node1, node2){
 
     }
 
-    palindrome(){
-
+    palindrome(node){
+        
     }
 
     intersection(list1, list2){
