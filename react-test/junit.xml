@@ -1,0 +1,87 @@
+<testsuites name="jest tests" tests="5" failures="5" time="1.206">
+  <testsuite name="undefined" errors="0" failures="5" skipped="0" timestamp="2020-06-17T00:00:01" time="1.206" tests="5">
+    <testcase classname=" initial UI is rendered as expected" name=" initial UI is rendered as expected" time="0.059">
+      <failure>Error: expect(received).toBe(expected)
+
+Expected value to be (using ===):
+  null
+Received:
+  &lt;ul class=&quot;styled mt-50&quot; data-testid=&quot;customer-list&quot; /&gt;
+
+Difference:
+
+  Comparing two different types of values. Expected null but received object.
+    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:18:41)
+    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
+    at &lt;anonymous&gt;</failure>
+    </testcase>
+    <testcase classname=" button adds customer" name=" button adds customer" time="0.019">
+      <failure>Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  Steve
+Received:
+
+    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:31:27)
+    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
+    at &lt;anonymous&gt;</failure>
+    </testcase>
+    <testcase classname=" button adds multiple customer" name=" button adds multiple customer" time="0.013">
+      <failure>Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  Steve
+Received:
+
+    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:51:36)
+    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
+    at &lt;anonymous&gt;</failure>
+    </testcase>
+    <testcase classname=" after adding customer input has no value" name=" after adding customer input has no value" time="0.008">
+      <failure>Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  Steve
+Received:
+
+    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:65:36)
+    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
+    at &lt;anonymous&gt;</failure>
+    </testcase>
+    <testcase classname=" no customer added on empty input" name=" no customer added on empty input" time="0.006">
+      <failure>Error: expect(received).toBe(expected)
+
+Expected value to be (using ===):
+  null
+Received:
+  &lt;ul class=&quot;styled mt-50&quot; data-testid=&quot;customer-list&quot;&gt;&lt;li class=&quot;slide-up-fade-in&quot; data-testid=&quot;list-item0&quot; /&gt;&lt;/ul&gt;
+
+Difference:
+
+  Comparing two different types of values. Expected null but received object.
+    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:77:41)
+    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
+    at &lt;anonymous&gt;</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
