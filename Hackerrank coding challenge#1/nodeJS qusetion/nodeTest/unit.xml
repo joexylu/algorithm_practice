@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.0090" tests="6" failures="6">
+  <testsuite name="Root Suite" timestamp="2020-06-17T00:10:42" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="express_middleware_basics" timestamp="2020-06-17T00:10:42" tests="6" file="/projects/challenge/test/index.spec.js" time="2.0090" failures="6">
+    <testcase name="express_middleware_basics Should have the trace object in the request" time="0.0070" classname="Should have the trace object in the request">
+      <failure message="expected { Object (originalUrl, baseUrl, ...) } to have property &apos;trace&apos;" type="AssertionError"><![CDATA[AssertionError: expected { Object (originalUrl, baseUrl, ...) } to have property 'trace'
+    at Context.it (test/index.spec.js:28:25)]]></failure>
+    </testcase>
+    <testcase name="express_middleware_basics Should have property id, timestamp, path in trace object" time="0.0000" classname="Should have property id, timestamp, path in trace object">
+      <failure message="Cannot read property &apos;should&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'should' of undefined
+    at Context.it (test/index.spec.js:33:19)]]></failure>
+    </testcase>
+    <testcase name="express_middleware_basics Should have a valid path value against the path property" time="0.0000" classname="Should have a valid path value against the path property">
+      <failure message="Cannot read property &apos;path&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'path' of undefined
+    at Context.it (test/index.spec.js:40:19)]]></failure>
+    </testcase>
+    <testcase name="express_middleware_basics Should have a unique id value against the id property" time="0.0000" classname="Should have a unique id value against the id property">
+      <failure message="Cannot read property &apos;id&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'id' of undefined
+    at Context.it (test/index.spec.js:47:53)]]></failure>
+    </testcase>
+    <testcase name="express_middleware_basics Should have a valid timestamp value in the trace" time="0.0010" classname="Should have a valid timestamp value in the trace">
+      <failure message="Cannot read property &apos;timestamp&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'timestamp' of undefined
+    at Context.it (test/index.spec.js:61:39)]]></failure>
+    </testcase>
+    <testcase name="express_middleware_basics Should have the middleware mounted on all the /task routes" time="2.0010" classname="Should have the middleware mounted on all the /task routes">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (/projects/challenge/test/index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (/projects/challenge/test/index.spec.js)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
