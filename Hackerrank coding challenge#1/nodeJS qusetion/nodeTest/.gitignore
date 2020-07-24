@@ -44,3 +44,4 @@ dist
 .dynamodb/
 .tern-port
 */node_modules
+/package-lock.json
