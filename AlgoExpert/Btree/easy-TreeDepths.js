@@ -28,3 +28,4 @@ function nodeDepths(root, sum = 0){
 //     }
 //     return sumDepth
 // }
+//On time O(height) space
