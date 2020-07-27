@@ -10,6 +10,15 @@ function isValidSub(array, sequence){
         return false
     }
 }
+// On time, O1 space
+// function isValidSub(array, sequence){
+//     let seqIdx = 0;
+//     for (const val of array){
+//         if(seqIdx === sequence.length) break;
+//         if(sequence[seqIdx] === val) seqIdx++;
+//     }
+//     return seqIdx === sequence.length
+// }
 
 
 const arr =[5,1,22,25,6,-1,8,10]
