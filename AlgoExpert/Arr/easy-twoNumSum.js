@@ -22,7 +22,24 @@ function twoNumberSum(array, target){
 	// 		 result = [el, target - el]
 	// 	 }
 	//  })
-	// return result
+    // return result
+    
+
+    // array.sort((a,b) => a - b);
+    // let left = 0, right = array.length -1;
+    // let currentSum;
+    // while (left < right){
+    //     currentSum = array[left] + array[right];
+
+    //     if(currentSum === target){
+    //         return [array[left], array[right]]
+    //     }else if (currentSum < target){
+    //         left ++;
+    //     }else if (currentSum > target){
+    //         right --;
+    //     }
+    // }
+    // return []
 }
 
 console.log(twoNumberSum(arr, 10))
