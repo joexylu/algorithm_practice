@@ -22,20 +22,29 @@
 
 # puts say_bye
 
-def compress_str(str)
-    compress = ""
-    i = 0
-    while i < str.length
-        char = str[i]
-        count = 0
-        while char == str[i]
-            count += 1
-            i += 1
-        end
-        compress += (count.to_s + char)
-    end
+# def compress_str(str)
+#     compress = ""
+#     i = 0
+#     while i < str.length
+#         char = str[i]
+#         count = 0
+#         while char == str[i]
+#             count += 1
+#             i += 1
+#         end
+#         compress += (count.to_s + char)
+#     end
 
-    compress
+#     compress
+# end
+
+# p compress_str("aaabbbccccc")
+
+def add_and_proc(num1, num2, &prc)
+
+    sum = num1 + num2
+
+    prc.call(sum)
 end
 
-p compress_str("aaabbbccccc")
+p add_and_proc(1,2) {|ele| ele += 2}
