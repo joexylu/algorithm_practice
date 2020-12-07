@@ -61,6 +61,28 @@ function dfsFindIP(str,result, sub, start){
     }
 }
 
+function getIP(s){
+    if (s.length > 12 || s.length < 4) return [];
+    let result = []; //存储所有结果
+    let index = 0; //记整ip地址位数
+    dfs('', s, index, result);
+    function dfs(str, remain, index, result) {
+        if (index == 4 && remain.length == 0) result.push(str.substr(1));
+        if (index == 4 || remain.length == 0) return;
+        // 一位数 可以为0
+        dfs(str + '.' + remain.substr(0,1), remain.substr(1), index+1, result);
+        if (remain.length > 1 && parseInt(remain.charAt(0)) !== 0) {
+            // 二位数 开头不能为0
+            dfs(str + '.' + remain.substr(0,2), remain.substr(2), index+1, result); 
+            if (remain.length > 2 && parseInt(remain.substr(0,3)) <= 255) {
+                // 三位数
+                dfs(str + '.' + remain.substr(0,3), remain.substr(3), index+1, result);
+            }
+        }
+    }
+    return result;
+}
+
 // console.log(findIP("25525511135"))
 
 //merge sort
@@ -278,3 +300,54 @@ class MinHeap{
 
 
 }
+
+// 求根到叶子节点数字之和
+
+function sum(root){
+    dfsSum(root,0)
+}
+
+const dfsSum= (root, prev)=>{
+    if(root === null) return 0
+
+    const sum = prev*10 + root.val
+    if(root.left == null && root.right == null){
+        return sum
+    }else{
+        return dfsSum(root.left, sum) + dfsSum(root.right, sum)
+    }
+}
+
+// 字节 面试
+
+asyncAdd(3, 5, (err, result) => {
+    console.log(result) // 8
+  })
+  
+  (async () => {
+    const result1 = await sum(1, 4, 6, 9, 10, 14)
+    const result2 = await sum(3, 4, 9, 20, 22, 30, 32, 100, 200)
+    const result3 = await sum(1, 6, 10, 15)
+    console.log([result1, result2, result3]) // [44, 402, 32]
+  })()
+  
+  // 
+  function sum() {
+  
+}
+
+function sum(...args){
+    return new Promise((resolve, reject)=>{
+        let twoNum = args.slice(0,3)
+        asyncAdd(twoNum, (err, result) => {
+            if (error){reject()}
+            if (args.length < 1){
+                resolve()
+            }else{
+                asyncAdd(arg.slice(0,3))
+            }
+            
+        })
+    })
+}
+sum().then(()=>())
