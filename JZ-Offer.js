@@ -439,3 +439,44 @@ const spiralOrder = (matrix) => {
     }
     return res;
   };
+
+
+//手写一个promise的ajax请求
+const getJson = function (url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        if (this.status === 200) {
+          resolve(this.responseText, this)
+        } else {
+          const resJson = { code: this.status, response: this.response};
+          reject(resJson);
+        }
+      } 
+    };
+    xhr.send();
+  })
+};
+// 使用
+getJSON('URL').then((res) => {
+	console.log(res);
+}).catch((err)=>{
+	console.log(err);
+})   
+
+let request = new XMLHttpRequest()
+    request.open('get', '/xxx') 
+    request.onreadystatechange = ()=>{
+        if(request.readyState===4){ 
+            if(request.status >= 200 && request.status < 300){ 
+                console.log('说明请求成功了') 
+                let string = request.responseText    
+                let object = window.JSON.parse(string)  
+             }  }else if(request.status >= 400){
+                console.log('说明请求失败') 
+            }
+        }
+    }
+    request.send()
