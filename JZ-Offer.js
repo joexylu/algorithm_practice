@@ -480,3 +480,55 @@ let request = new XMLHttpRequest()
         }
     }
     request.send()
+
+
+
+// setTimeout 异步，promise，async await
+
+// currying add function
+
+//high order component
+
+//ES6 Symbol
+
+Symbol
+
+let foo=Symbol('foo');
+let foo2=Symbol('foo');
+foo===foo2// false
+Symbol.for=function(str){}
+Symbol.for('foo')===Symbol.for('foo')//true;
+new Symbol('foo')//Error
+
+new Object();
+new Object();
+
+
+function Symbol(){
+  this instanceof Symbol
+  throw error;
+}
+()=>{} //new
+new String('aaa') === new String('aaa')
+
+// for use set and hash map to look for element
+
+// 给定一个未排序的整数数组，找出最长连续序列的长度。要求算法的时间复杂度为 O(n)。
+
+function longestConsecutive( nums ) {
+  // write code here
+  let max = 0
+  let set = new Set(nums)
+  for(let i =0; i < nums.length; i++){
+      if(!set.has(nums[i]-1)){
+          let arrlen = 1;
+          let currentNum = nums[i]
+          while(set.has(currentNum+1)){
+              currentNum+=1
+              arrlen+=1
+          }
+          max = Math.max(arrlen, max)
+      }
+  }
+  return max
+}
