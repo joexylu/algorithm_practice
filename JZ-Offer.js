@@ -488,6 +488,8 @@ let request = new XMLHttpRequest()
 // currying add function
 
 //high order component
+// hoc is a function that takes a component and return a new component
+//to control props or to wrap component to make change
 
 //ES6 Symbol
 
@@ -532,3 +534,5 @@ function longestConsecutive( nums ) {
   }
   return max
 }
+
+
