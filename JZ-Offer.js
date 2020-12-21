@@ -560,3 +560,24 @@ function longestConsecutive( nums ) {
 }
 
 
+// 数组中出现次数超过一半的数字
+
+function MoreThanHalfNum_Solution(numbers)
+{
+    // write code here
+    let map = {}
+    for(let i=0; i< numbers.length; i++){
+        if(!!map[numbers[i]]){
+            map[numbers[i]] += 1
+        }else{
+            map[numbers[i]] = 1
+        }
+    }
+    for(let items in map){
+        if(map[items] > Math.floor(numbers.length/2)){
+            return items
+        }
+    }
+    return 0
+}
+
