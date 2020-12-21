@@ -581,3 +581,33 @@ function MoreThanHalfNum_Solution(numbers)
     return 0
 }
 
+//Onramp coding challenge 
+function checkOpDir(a, b){
+  if(a === "NORTH" && b === "SOUTH"){
+      return true
+  }else if(a === "SOUTH" && b === "NORTH"){
+      return true
+  }else if(a === "EAST" && b === "WEST"){
+      return true
+  }else if(a === "WEST" && b === "EAST"){
+      return true
+  }else{
+      return false
+  }
+}
+
+function directionReduction(directions) {
+  if (directions.length < 2) return directions
+  let i= 0, j = 1
+  while(j < directions.length){
+      if(checkOpDir(directions[i], directions[j])){
+          directions.splice(i, 2)
+          i = 0
+          j = 1
+      }else{
+          i += 1
+          j += 1
+      }
+  }
+  return directions
+}
