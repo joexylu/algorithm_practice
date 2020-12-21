@@ -486,6 +486,30 @@ let request = new XMLHttpRequest()
 // setTimeout 异步，promise，async await
 
 // currying add function
+function add(x){
+  let sum = x;
+  return function resultFn(y){
+      if(arguments.length){ //not relying on falsy value
+          sum += y;
+          return resultFn;
+      }
+      return sum;
+  }
+}
+
+function myCurry(fn, object, numArgs){
+  let nums = []
+  let fcn = fn.bind(object)
+  return _myCurry = function(el){
+      nums.push(el);
+      if (nums.length < numArgs){
+          return _myCurry;
+      } else {
+          return fcn(...nums)
+      }
+  }
+}
+
 
 //high order component
 // hoc is a function that takes a component and return a new component
