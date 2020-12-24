@@ -611,3 +611,21 @@ function directionReduction(directions) {
   }
   return directions
 }
+
+
+// tomocredit coding question:
+const display = function(item){
+  return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(item);
+        resolve()
+    }, 2000);
+  })
+};
+(async () => {
+  const veggies = ['cucumber', 'tomato', 'carrot', 'onion'];
+  for (const veg of veggies) {
+    await display(veg);
+    console.log(`completed ${veg}`);
+  }
+})();

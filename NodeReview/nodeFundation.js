@@ -58,3 +58,23 @@ const server = http.createServer((req, res)=>{
 //app.use() method 
 //function to get request and send back response in server
 
+// setImmediate() is designed to execute a script once the current poll (event loop) 
+// phase completes.
+
+// setTimeout() schedules a script to be run after a minimum threshold in ms has elapsed.
+
+// What is package.json? What is it used for?
+// This file holds various metadata information about the project. This file is used to give 
+// information to npm that allows it to identify the project as well as handle the project's 
+// dependencies.
+
+// What is Streams in Node.js?
+// Streams are pipes that let you easily read data from a source and pipe it to a destination. 
+// Simply put, a stream is nothing but an EventEmitter and implements some specials methods. 
+// Depending on the methods implemented, a stream becomes Readable, Writable, or Duplex 
+// (both readable and writable).
+
+//what is callback?
+// A callback is a function called at the completion of a given task; this prevents any blocking, 
+// and allows other code to be run in the meantime.
+
