@@ -629,3 +629,21 @@ const display = function(item){
     console.log(`completed ${veg}`);
   }
 })();
+
+
+//手写getElementByClassName
+
+function getElementByClassName(className){
+  const nodeList = []
+  fucntion get(node){
+    if(node.classList === className){
+      nodeList.push(node.classList[count])
+    }
+
+    for(let i = 0; i < node.childNodes.length; i++){
+      get(node.childNodes[i])
+    }
+    get(document.body)
+    return nodeList
+  }
+}
